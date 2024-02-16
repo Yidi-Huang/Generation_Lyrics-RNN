@@ -7,5 +7,5 @@ Le projet vise à générer des parole de chansons de manière automatique à l'
 
 ### étape 2 : génération de parole de chanson selon le titre prompt (à faire)
 
-### étape 3 : génération de parole de chanson selon émotion prompt. (à faire)
+### étape 3 : génération de parole de chanson selon émotion prompt. (à faire??)
 
