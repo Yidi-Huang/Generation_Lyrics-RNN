@@ -1,6 +1,6 @@
 # Generation_Lyrics-RNN
 
-Le projet vise à générer des parole de chansons de manière automatique à l'aide du RNN.
+Le projet vise à générer des paroles de chansons de manière automatique à l'aide du **RNN**.
 
 
 ### étape 1 : génération des paroles de chansons
