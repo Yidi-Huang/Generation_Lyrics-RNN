@@ -3,9 +3,9 @@
 Le projet vise à générer des parole de chansons de manière automatique à l'aide du RNN.
 
 
-### étape 1 : génération de parole de chanson
+### étape 1 : génération des paroles de chansons
 
-### étape 2 : génération de parole de chanson selon le titre prompt (à faire)
+### étape 2 : génération des paroles de chanson selon 2 prompts : *titre* + *1ère phrase*
 
-### étape 3 : génération de parole de chanson selon émotion prompt. (à faire??)
+### étape 3 : génération des paroles de chansons selon le prompt *émotion*. (à faire??)
 
