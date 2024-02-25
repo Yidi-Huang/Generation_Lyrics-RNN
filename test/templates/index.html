@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Selection</title>
+</head>
+
+<body>
+
+    <h1>Title of your song</h1>
+    <form action="/process_input" method="post">
+        <label for="user_input">Enter the title of your song (no more than 15 words):</label><br>
+        <input type="text" id="user_input" name="user_input"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if pt %}
+    <p>{{ pt }}</p>
+    {% endif %}
+
+    <h1>First phrase of your song</h1>
+    <form action="/process_input2" method="post">
+        <label for="user_input2">Enter the 1st phrase of your song:</label><br>
+        <input type="text" id="user_input2" name="user_input2"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if pp %}
+    <p>{{ pp }}</p>
+    {% endif %}
+
+    <h1>Select a Model:</h1>
+    <form action="/select_model" method="post">
+        <button type="submit" name="model" value="taylor">Taylor</button>
+        <button type="submit" name="model" value="ed">Ed</button>
+        <button type="submit" name="model" value="daley">Daley</button>
+    </form>
+
+    {% if result %}
+    <p>{{ result }}</p>
+    {% endif %}
+
+
+    <h1>Set lyrics length:</h1>
+    <form action="/set_len" method="post">
+        <label for="user_input2">Enter the length of your song:</label><br>
+        <input type="text" id="len" name="len"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+
+
+
+</body>
+
+</html>
