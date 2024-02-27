@@ -5,9 +5,9 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 from keras.models import load_model
 import pandas as pd
 
-def calculate_mapping_length(artist_name):
+def calculate_mapping_length(artist):
     # Charger le fichier CSV correspondant à l'artiste
-    data = pd.read_csv(f'../corpus/{artist_name}.csv')
+    data = pd.read_csv(f'./corpus/{artist}.csv')
 
     # Analyser les paroles
     wholelist = []
@@ -41,20 +41,20 @@ def calculate_mapping_length(artist_name):
 
     return mapping,reverse_mapping
 
-def generate_title_features(title_text, mapping, max_title_length):
-    title_seq = [mapping.get(char, 0) for char in title_text][:max_title_length]
+def generate_title_features(title, mapping, max_title_length):
+    title_seq = [mapping.get(char, 0) for char in title][:max_title_length]
     title_features = pad_sequences([title_seq], maxlen=max_title_length, padding='post', value=0)
     return title_features
 
-def lyrics_generator(model, mapping, reverse_mapping, starter_text, title_text, ch_count, max_title_length, l_symb):
-    generated = starter_text
-    title_features = generate_title_features(title_text, mapping, max_title_length)
+def lyrics_generator(model, mapping, reverse_mapping, starter, title, ch, max_title_length, l_symb):
+    generated = starter
+    title_features = generate_title_features(title, mapping, max_title_length)
 
-    seed = [mapping.get(char, 0) for char in starter_text[-40:]]  # Taking the last 40 characters as seed
+    seed = [mapping.get(char, 0) for char in starter[-40:]]  # Taking the last 40 characters as seed
     seed_padded = pad_sequences([seed], maxlen=40, padding='post', value=0)  # Ensuring fixed length for seed
     seed_padded = np.reshape(seed_padded, (1, 40, 1)) / float(l_symb)  # Normalizing
 
-    for _ in range(ch_count):
+    for _ in range(ch):
         prediction = model.predict([title_features, seed_padded], verbose=0)[0]
         prediction = np.asarray(prediction).astype('float64')
         prediction = np.log(prediction + 1e-7)  # Avoiding log of 0
@@ -82,21 +82,21 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Load the model
-    model_path = os.path.join("../model", f"{args.artist_name}.h5")
+    model_path = os.path.join("../model", f"{args.artist}.h5")
     if os.path.exists(model_path):
-        model=load_model(f'../model/{args.artist_name}.h5')
+        model=load_model(f'../model/{args.artist}.h5')
         print('Success : find your model.')
     else:
-        raise FileNotFoundError(f"Model for artist {args.artist_name} not found")
+        raise FileNotFoundError(f"Model for artist {args.artist} not found")
 
     # Fixed values
     max_title_length = 20
-    mapping,reverse_mapping =calculate_mapping_length(args.artist_name)
+    mapping,reverse_mapping =calculate_mapping_length(args.artist)
     l_symb=len(mapping)
     
 
-    generated_text = lyrics_generator(model, mapping, reverse_mapping, args.starter_text+'<c>', args.title_text,
-                                      args.ch_count, max_title_length, l_symb)
+    generated_text = lyrics_generator(model, mapping, reverse_mapping, args.starter+'<c>', args.title,
+                                      args.ch, max_title_length, l_symb)
 
     # Printing generated lyrics
     generated_text = re.sub(r'<c>', '\n', generated_text)

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Selection</title>
+</head>
+
+<body>
+
+    <h1>Lyrics Generator</h1>
+    <form action="/generate_lyrics/" method="post">
+        <label for="artist">Artist:</label><br>
+        <input type="text" id="artist" name="artist"><br>
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title"><br>
+        <label for="starter">Starter:</label><br>
+        <input type="text" id="starter" name="starter"><br>
+        <label for="ch">Number of Characters:</label><br>
+        <input type="number" id="ch" name="ch" min="1" value="200"><br><br>
+        <input type="submit" value="Generate Lyrics">
+    </form>
+
+    {% if generated_text %}
+    <h2>Generated Lyrics</h2>
+    <pre>{{ generated_text }}</pre>
+    {% endif %}
+
+</body>
+
+</html>
