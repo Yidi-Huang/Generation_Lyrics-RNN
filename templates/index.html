@@ -38,23 +38,37 @@
         <form action="http://127.0.0.1:8080/generate_lyrics/" method="post">
 
             <div>
-                <label for="artist">歌手名字:</label>
-                <input type="text" id="artist" name="artist" required>
+                <label for="artist">Nom de artiste:</label>
+                <select id="artist" name="artist" required>
+       				<option value="">Choisir un artiste : </option> 
+       				<option value="ariana-grande">ariana-grande</option> 
+        			<option value="beyonce">beyonce</option> 
+       	 			<option value="billy-joel">billy-joel</option>
+       	 			<option value="billie-eilish">billie-eilish</option>
+       	 			<option value="david-bowie">david-bowie</option>
+       	 			<option value="ed-sheeran">ed-sheeran</option>
+       	 			<option value="eric-clapton">eric-clapton</option>
+       	 			<option value="lana-delrey">lana-delrey</option>
+       	 			<option value="leonard-cohen">leonard-cohen</option>
+       	 			<option value="nicki-minaj">nicki-minaj</option>
+       	 			<option value="taylor-swift">taylor-swift</option> 
+       
+    </select>
             </div>
             <div>
-                <label for="title">歌曲标题:</label>
+                <label for="title">Titre des paroles:</label>
                 <input type="text" id="title" name="title" required>
             </div>
             <div>
-                <label for="starter">起始歌词:</label>
+                <label for="starter">Début des paroles:</label>
                 <input type="text" id="starter" name="starter" required>
             </div>
             <div>
-                <label for="ch">生成的字符数:</label>
+                <label for="ch">Nombre de caractères générés( < 500):</label>
                 <input type="number" id="ch" name="ch" required>
             </div>
             <div>
-                <input type="submit" value="生成歌词">
+                <input type="submit" value="génération de parole">
             </div>
             {% if generated_text %}
 <div>
@@ -74,7 +88,7 @@
 							<h2>Plus de détails de projet</h2>
 							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
 							<ul class="actions">
-								<li><a href="#" class="button">Learn More</a></li>
+								<li><a href="projet_detail.html/" class="button">Learn More</a></li>
 							</ul>
 						</section>
 						<section>

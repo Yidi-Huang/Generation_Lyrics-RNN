@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Stellar by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Lyric Generator</h1>
+						<p>Generate lyrics in your favourite style</p>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
+								
+
+ <h2>1. Les objectifs du projet</h2>
+ 
+	 <p>L’objectif du projet est de créer automatiquement des paroles de chansons basées sur les mots dans le style de différents chanteurs, en utilisant un Réseau de Neurones Récurrents (RNN), à partir d'une première phrase donnée.</p>
+	 
+<h2>2. Les données utilisées</h2>
+ <p>Les sources utilisées pour ce projet comprennent :</p>
+    <ul>
+        <li>11 ensembles de données, chacun contenant 50 chansons d’un chanteur. Les données sont disponibles à l'adresse suivante : <a href="https://github.com/Yidi-Huang/Generation_Lyrics-RNN/tree/main/corpus">https://github.com/Yidi-Huang/Generation_Lyrics-RNN/tree/main/corpus</a></li>
+        <li>Format : fichier CSV avec deux colonnes : "Artiste" et "Texte".</li>
+        <li>Origine : récupéré depuis le site <a href="https://genius.com/">https://genius.com/</a></li>
+        <li>Statut juridique : conforme aux conditions d'utilisation du site Genius.com.</li>
+    </ul>
+    <p>Le projet s’inspire du notebook pour la génération des paroles de chansons basés sur les caractères disponible sur <a href="https://www.kaggle.com/code/karnikakapoor/lyrics-generator-rnn/notebook">Kaggle</a>.</p>
+
+    <h2>3. La méthodologie</h2>
+    <p>Le travail est divisé en 5 étapes :</p>
+    <ol>
+        <li>Récupération des données : Les données sont récupérées à partir des sources mentionnées précédemment.</li>
+        <li>Construction du modèle RNN : Un modèle RNN est construit pour générer les paroles de chansons avec plusieurs ajustements spécifiques pour résoudre certains problèmes rencontrés.</li>
+        <li>Fine-tuning et test : Pour améliorer la performance du modèle, un fine-tuning est effectué.</li>
+        <li>Mise en pratique sur la page web à l’aide de FastAPI : Le modèle est mis en œuvre sur une page web.</li>
+        <li>Mise en forme des pages avec la documentation : Les pages web sont mises en forme pour que la documentation soit claire et accessible aux utilisateurs.</li>
+    </ol>
+<h2>4. L’implémentation</h2>
+    <p>Différents outils et technologies ont été utilisés dans ce projet :</p>
+    <ul>
+        <li>LyricsGenius : pour Genius.com API</li>
+        <li>LSTM : modèle de base</li>
+        <li>Keras : API pour les réseaux de neurones</li>
+    </ul>
+
+    <h2>5. Les résultats et discussion</h2>
+    <p>Des améliorations futures sont envisagées pour rendre les paroles plus naturelles, telles que la notification des rimes et la création des paroles selon les thèmes ou les émotions.</p>
+
+ 
+ 
+
+</section>
+</div id="main">
+									<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
