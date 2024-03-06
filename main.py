@@ -9,7 +9,7 @@ import sys
 sys.path.append("script")
 from script.generate import calculate_mapping_length,lyrics_generator
 import re
-
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
@@ -18,12 +18,18 @@ templates_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templa
 
 templates = Jinja2Templates(directory=templates_dir)
 
-
+# 静态文件服务配置
+app.mount("/assets", StaticFiles(directory="assets"), name="assets")
 
 @app.get("/", response_class=JSONResponse)
 async def read_index(request: Request):
     # 渲染index.html模板并返回HTML页面
     return templates.TemplateResponse("index.html", {"request": request})
+    
+@app.get("/projet_detail.html/")
+async def get_projet_detail(request: Request):
+    return templates.TemplateResponse("projet_detail.html/", {"request": request})
+
 
 
 @app.post("/generate_lyrics/", response_class=JSONResponse)
