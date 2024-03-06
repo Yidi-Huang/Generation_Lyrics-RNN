@@ -28,7 +28,7 @@ async def read_index(request: Request):
     
 @app.get("/projet_detail.html/")
 async def get_projet_detail(request: Request):
-    return templates.TemplateResponse("projet_detail.html/", {"request": request})
+    return templates.TemplateResponse("projet_detail.html", {"request": request})
 
 
 
