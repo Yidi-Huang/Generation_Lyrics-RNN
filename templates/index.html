@@ -29,16 +29,21 @@
 						<!-- Content -->
 							<section id="content" class="main">
 								<span class="image main"><img src="/images/pic04.jpg" alt="" /></span>
-								<h2>Magna feugiat lorem</h2>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis fames ac ante ipsum primis in faucibus.</p>
-								<p>Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Consequat leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit enim turpis lorem ipsum dolor sit amet feugiat. Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet est velit quis lorem.</p>
-								<h2>Tempus veroeros</h2>
-								<p>Cep risus aliquam gravida cep ut lacus amet. Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae ante vestibulum ante. Blandit. Ante accumsan nisi eu placerat gravida placerat adipiscing in risus fusce vitae ac mi accumsan nunc in accumsan tempor blandit aliquet aliquet lobortis. Ultricies blandit lobortis praesent turpis. Adipiscing accumsan adipiscing adipiscing ac lacinia cep. Orci blandit a iaculis adipiscing ac. Vivamus ornare laoreet odio vis praesent nunc lorem mi. Erat. Tempus sem faucibus ac id. Vis in blandit. Nascetur ultricies blandit ac. Arcu aliquam. Accumsan mi eget adipiscing nulla. Non vestibulum ac interdum condimentum semper commodo massa arcu.</p>
+								<h2>Présensation du projet</h2>
+								<p>
+Bienvenue dans notre projet de création de paroles de chansons ! Dans ce projet, nous utiliserons la technologie des réseaux neuronaux pour construire un modèle multi-entrées multi-sorties unique à l'aide de Keras, destiné à la création de paroles de chansons captivantes. L'inspiration de ce modèle découle de l'infinie possibilité de création musicale et de la fusion de l'art et de la technologie.</p>
+								<p>Notre objectif est de vous permettre de générer facilement des paroles de chansons originales et percutantes, que ce soit pour votre groupe, vos projets personnels ou musicaux. En entrant les séquences de paroles et les caractéristiques de longueur fixe des titres, notre modèle apprendra la structure linguistique et les thèmes des paroles, puis créera de toutes nouvelles paroles sur cette base.</p>
+								<p>Notre modèle a déjà été formé sur 11 artistes aux styles variés, vous permettant d'explorer différents styles de paroles. Que vous soyez musicien, auteur-compositeur ou simplement passionné par la créativité, nous vous invitons à rejoindre notre projet de création de paroles de chansons pour explorer la merveilleuse combinaison de musique et de technologie, et créer ensemble vos propres miracles musicaux !</p>
+								
+								
+								<h2>Utilisation du modèle</h2>
+								<p>
+Pour utiliser ce modèle, vous pouvez choisir un style d'artiste que vous souhaitez, donner le titre des paroles que vous souhaitez générer, la longueur recommandée est de moins de 15 mots. Ensuite, vous pouvez fournir au moins un mot pour commencer les paroles, et enfin indiquer la longueur des paroles à générer, avec une recommandation de moins de 500 mots. Enfin, cliquez sur le bouton génération de parole.</p>
 								 <!-- 歌词生成表单 -->
         <form action="http://127.0.0.1:8080/generate_lyrics/" method="post">
 
             <div>
-                <label for="artist">Nom de artiste:</label>
+                <label for="artist">Noms des artistes:</label>
                 <select id="artist" name="artist" required>
        				<option value="">Choisir un artiste : </option> 
        				<option value="ariana-grande">ariana-grande</option> 
@@ -56,11 +61,11 @@
     </select>
             </div>
             <div>
-                <label for="title">Titre des paroles:</label>
+                <label for="title">Titre des paroles (en anglais <15) :</label>
                 <input type="text" id="title" name="title" required>
             </div>
             <div>
-                <label for="starter">Début des paroles:</label>
+                <label for="starter">Début des paroles (en anglais ≥ 1) :</label>
                 <input type="text" id="starter" name="starter" required>
             </div>
             <div>
@@ -92,15 +97,14 @@
 							</ul>
 						</section>
 						<section>
-							<h2>Etiam feugiat</h2>
-							<dl class="alt">
-								<dt>Address</dt>
-								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
-								<dt>Phone</dt>
-								<dd>(000) 000-0000 x 0000</dd>
-								<dt>Email</dt>
-								<dd><a href="#">information@untitled.tld</a></dd>
-							</dl>
+							<h2>Développeuses du modèle</h2>
+							
+							<span>Yidi HUANG : yidi.huang.elodie@gmail.com</span><br>
+							<span>Kexin GUI : guikexinpro@gmail.com</span><br>
+							
+
+
+						
 							<ul class="icons">
 								<li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
 								<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
