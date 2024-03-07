@@ -20,7 +20,7 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>Lyric Generator</h1>
-						<p>Generate lyrics in your favourite style</p>
+						<p>Generate lyrics in your favorite style</p>
 					</header>
 
 				<!-- Main -->
@@ -35,7 +35,7 @@
  
 	 <p>L’objectif du projet est de créer automatiquement des paroles de chansons basées sur les mots dans le style de différents chanteurs, en utilisant un Réseau de Neurones Récurrents (RNN), à partir d'une première phrase donnée.</p>
 	 
-<h2>2. Les données utilisées</h2>
+<h2>2. Les données utilisées </h2>
  <p>Les sources utilisées pour ce projet comprennent :</p>
     <ul>
         <li>11 ensembles de données, chacun contenant 50 chansons d’un chanteur. Les données sont disponibles à l'adresse suivante : <a href="https://github.com/Yidi-Huang/Generation_Lyrics-RNN/tree/main/corpus">https://github.com/Yidi-Huang/Generation_Lyrics-RNN/tree/main/corpus</a></li>
@@ -45,27 +45,52 @@
     </ul>
     <p>Le projet s’inspire du notebook pour la génération des paroles de chansons basés sur les caractères disponible sur <a href="https://www.kaggle.com/code/karnikakapoor/lyrics-generator-rnn/notebook">Kaggle</a>.</p>
 
+
+
+
+
+<section id="methodologie">
     <h2>3. La méthodologie</h2>
     <p>Le travail est divisé en 5 étapes :</p>
     <ol>
-        <li>Récupération des données : Les données sont récupérées à partir des sources mentionnées précédemment.</li>
-        <li>Construction du modèle RNN : Un modèle RNN est construit pour générer les paroles de chansons avec plusieurs ajustements spécifiques pour résoudre certains problèmes rencontrés.</li>
-        <li>Fine-tuning et test : Pour améliorer la performance du modèle, un fine-tuning est effectué.</li>
-        <li>Mise en pratique sur la page web à l’aide de FastAPI : Le modèle est mis en œuvre sur une page web.</li>
-        <li>Mise en forme des pages avec la documentation : Les pages web sont mises en forme pour que la documentation soit claire et accessible aux utilisateurs.</li>
+        <li><strong>Récupération des données :</strong> Les données sont récupérées à partir des sources mentionnées précédemment.</li>
+        <li>
+            <strong>Construction du modèle RNN :</strong> Un modèle RNN est construit pour générer les paroles de chansons. Les problèmes rencontrés et leurs solutions :
+            <ul>
+                <li>Problème 1 : Adaptation du modèle à un modèle basé sur les mots pour une meilleure morphologie des paroles.</li>
+                <li>Problème 2 : Ajout d'une couche spéciale dans Keras pour détecter la relation entre le titre de la chanson et ses paroles.</li>
+                <li>Problème 3 : Ajout d'une marque spéciale &lt;c&gt; pour indiquer le retour à la ligne dans le dataset.</li>
+            </ul>
+        </li>
+        <li><strong>Fine-tuning et test :</strong> Utilisation d'une méthode de recherche de grille (GRID SEARCH) pour optimiser les hyperparamètres.</li>
+        <li><strong>Mise en pratique sur la page web à l’aide de FastAPI :</strong> Le modèle est mis en œuvre sur une page web pour permettre la génération de paroles.</li>
+        <li><strong>Mise en forme des pages avec la documentation :</strong> Organisation de la documentation pour une meilleure accessibilité.</li>
     </ol>
-<h2>4. L’implémentation</h2>
-    <p>Différents outils et technologies ont été utilisés dans ce projet :</p>
+</section>
+    
+    
+    
+    
+  
+ <section id="implementation">
+    <h2>4. L’implémentation</h2>
+    <p>Les outils et technologies utilisés incluent :</p>
     <ul>
         <li>LyricsGenius : pour Genius.com API</li>
         <li>LSTM : modèle de base</li>
         <li>Keras : API pour les réseaux de neurones</li>
     </ul>
+</section>
 
-    <h2>5. Les résultats et discussion</h2>
-    <p>Des améliorations futures sont envisagées pour rendre les paroles plus naturelles, telles que la notification des rimes et la création des paroles selon les thèmes ou les émotions.</p>
+<section id="resultats">
+    <h2>5. Les résultats</h2>
+    <p>Les améliorations envisagées pour rendre les paroles plus naturelles incluent :</p>
+    <ul>
+        <li>Notification des rimes : Intégration d'un système de notification des rimes pour améliorer la fluidité des paroles.</li>
+        <li>Création des paroles selon les thèmes ou les émotions : Utilisation de datasets classés par thèmes ou émotions pour enrichir la qualité des paroles.</li>
+    </ul>
+</section>
 
- 
  
 
 </section>
