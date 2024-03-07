@@ -11,6 +11,23 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	
+	 <style>
+        /* Configurer le style pour la zone d'affichage des paroles */
+        .lyrics-container {
+            max-height: 500px; /* Hauteur maximale */
+            overflow-y: auto; /* Afficher une barre de défilement lorsque le contenu dépasse */
+            font-size: 14px; /* Taille de la police */
+            line-height: 1.5; /* L'espacement entre les lignes */
+            padding: 15px; /*  marge intérieure */
+            background-color: #fff; 
+            border: 1px solid #ccc; /* La bordure*/
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1); /* Ombre */
+        }
+        
+    </style>
+	
+	
 	</head>
 	<body class="is-preload">
 
@@ -39,7 +56,7 @@ Bienvenue dans notre projet de création de paroles de chansons ! Dans ce projet
 								<h2>Utilisation du modèle</h2>
 								<p>
 Pour utiliser ce modèle, vous pouvez choisir un style d'artiste que vous souhaitez, donner le titre des paroles que vous souhaitez générer, la longueur recommandée est de moins de 15 mots. Ensuite, vous pouvez fournir au moins un mot pour commencer les paroles, et enfin indiquer la longueur des paroles à générer, avec une recommandation de moins de 500 mots. Enfin, cliquez sur le bouton génération de parole.</p>
-								 <!-- 歌词生成表单 -->
+								 <!-- génération de paroles -->
         <form action="http://127.0.0.1:8080/generate_lyrics/" method="post">
 
             <div>
@@ -76,13 +93,17 @@ Pour utiliser ce modèle, vous pouvez choisir un style d'artiste que vous souhai
                 <input type="submit" value="génération de parole">
             </div>
             {% if generated_text %}
-<div>
+            
+            
+            
+            
+<div class="lyrics-container">
     <h2>Generated Lyrics</h2>
     <pre>{{ generated_text }}</pre>
 </div>
 {% endif %}
         </form>
-        <!-- 歌词生成表单结束 -->
+        <!-- fin génération de paroles -->
 							</section>
 
 					</div>

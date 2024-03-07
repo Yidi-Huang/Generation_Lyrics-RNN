@@ -48,25 +48,33 @@
 
 
 
-
 <section id="methodologie">
     <h2>3. La méthodologie</h2>
-    <p>Le travail est divisé en 5 étapes :</p>
-    <ol>
-        <li><strong>Récupération des données :</strong> Les données sont récupérées à partir des sources mentionnées précédemment.</li>
+    <p>Le travail est divisé en plusieurs étapes principales :</p>
+    <ul>
         <li>
-            <strong>Construction du modèle RNN :</strong> Un modèle RNN est construit pour générer les paroles de chansons. Les problèmes rencontrés et leurs solutions :
+            <strong>Récupération des données :</strong> Les données sont récupérées à partir des sources mentionnées précédemment.
+        </li>
+        <li>
+            <strong>Construction du modèle RNN :</strong> Un modèle RNN est construit pour générer les paroles de chansons. Les défis rencontrés et les solutions apportées incluent :
             <ul>
-                <li>Problème 1 : Adaptation du modèle à un modèle basé sur les mots pour une meilleure morphologie des paroles.</li>
-                <li>Problème 2 : Ajout d'une couche spéciale dans Keras pour détecter la relation entre le titre de la chanson et ses paroles.</li>
-                <li>Problème 3 : Ajout d'une marque spéciale &lt;c&gt; pour indiquer le retour à la ligne dans le dataset.</li>
+                <li>Adaptation du modèle à un modèle basé sur les mots pour une meilleure morphologie des paroles.</li>
+                <li>Ajout d'une couche spéciale dans Keras pour détecter la relation entre le titre de la chanson et ses paroles.</li>
+                <li>Ajout d'une marque spéciale &lt;c&gt; pour indiquer le retour à la ligne dans le dataset.</li>
             </ul>
         </li>
-        <li><strong>Fine-tuning et test :</strong> Utilisation d'une méthode de recherche de grille (GRID SEARCH) pour optimiser les hyperparamètres.</li>
-        <li><strong>Mise en pratique sur la page web à l’aide de FastAPI :</strong> Le modèle est mis en œuvre sur une page web pour permettre la génération de paroles.</li>
-        <li><strong>Mise en forme des pages avec la documentation :</strong> Organisation de la documentation pour une meilleure accessibilité.</li>
-    </ol>
+        <li>
+            <strong>Fine-tuning et test :</strong> Utilisation d'une méthode de recherche de grille (GRID SEARCH) pour optimiser les hyperparamètres.
+        </li>
+        <li>
+            <strong>Mise en pratique sur la page web à l’aide de FastAPI :</strong> Le modèle est mis en œuvre sur une page web pour permettre la génération de paroles.
+        </li>
+        <li>
+            <strong>Mise en forme des pages avec la documentation :</strong> Organisation de la documentation pour une meilleure accessibilité.
+        </li>
+    </ul>
 </section>
+
     
     
     
