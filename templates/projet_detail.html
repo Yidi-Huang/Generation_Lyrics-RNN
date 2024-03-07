@@ -106,7 +106,7 @@
         Lorsque la courbe commence à s'aplatir, c'est-à-dire que les changements de perte deviennent minimes, cela signifie que le modèle pourrait se rapprocher de la limite de performance de ses données d'entraînement, ou ce que l'on appelle la convergence. À ce stade, continuer l'entraînement peut ne pas apporter d'amélioration significative de la performance et pourrait signifier que le modèle commence à surajuster.
     </p>
     <p>
-        D'après nos multiples expériences, dans le contexte de nos capacités de calcul limitées, le modèle a montré une performance relativement bonne avec les paramètres définis à learning_rate=0.005, batch_size=128, epochs=10, c'est pourquoi nous avons finalement choisi d'utiliser cet ensemble de paramètres.
+        D'après nos multiples expériences, dans le contexte de nos capacités de calcul limitées, le modèle a montré une performance relativement bonne avec les paramètres définis à learning_rate=0.005, batch_size=128, epochs=100, c'est pourquoi nous avons finalement choisi d'utiliser cet ensemble de paramètres.
     </p>
     <p>
         L'image ci-dessous montre un extrait de paroles de chanson dans le style de Lana Del Rey que nous avons tenté de générer pendant le processus de formation. Nous pouvons voir que le texte généré présente certains problèmes, tels que des phrases maladroites et un manque de cohérence dans la grammaire et la structure des phrases. Cela pourrait être dû au fait que le modèle n'a pas bien appris les règles de la grammaire du langage naturel.
