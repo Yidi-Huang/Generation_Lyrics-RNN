@@ -13,17 +13,18 @@ from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
-# 获取模板文件夹的绝对路径
+# Obtenir le chemin absolu du dossier de modèles
 templates_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates")
 
 templates = Jinja2Templates(directory=templates_dir)
 
-# 静态文件服务配置
+# Configuration du service de fichiers statiques
 app.mount("/assets", StaticFiles(directory="assets"), name="assets")
+app.mount("/images", StaticFiles(directory="images"), name="images")
 
 @app.get("/", response_class=JSONResponse)
 async def read_index(request: Request):
-    # 渲染index.html模板并返回HTML页面
+    # Rendre le modèle index.html et renvoyer la page HTML
     return templates.TemplateResponse("index.html", {"request": request})
     
 @app.get("/projet_detail.html/")

@@ -28,7 +28,7 @@
 
 						<!-- Content -->
 							<section id="content" class="main">
-								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
+								<span class="image main"></span>
 								
 
  <h2>1. Les objectifs du projet</h2>
@@ -77,13 +77,65 @@
     <p>Les outils et technologies utilisés incluent :</p>
     <ul>
         <li>LyricsGenius : pour Genius.com API</li>
-        <li>LSTM : modèle de base</li>
+        <li>LSTM : modèle de base est disponibles à l'adresse suivante : <a href="https://github.com/Yidi-Huang/Generation_Lyrics-RNN/tree/main/script">https://github.com/Yidi-Huang/Generation_Lyrics-RNN/tree/main/script</a></li> 
         <li>Keras : API pour les réseaux de neurones</li>
     </ul>
 </section>
 
 <section id="resultats">
     <h2>5. Les résultats</h2>
+    <p>
+        Voici la courbe de perte lors de l'entraînement du modèle, qui montre qu'avec l'augmentation des epochs pendant l'entraînement, la perte du modèle diminue progressivement et tend à se stabiliser. C'est généralement un bon signe, indiquant que le modèle apprend des données d'entraînement et devient plus précis dans la prédiction des variables cibles de l'ensemble d'entraînement.
+    </p>
+    <p style="text-align: center;">
+    <img src="/images/00001.jpg" alt="Courbe de perte du modèle" style="max-width: 80%; margin: 0 auto;">
+</p>
+
+    <p>
+        Au début, la perte est relativement élevée, ce qui indique que la performance du modèle n'est pas très bonne au stade initial de l'entraînement. Mais à mesure que l'entraînement progresse, la perte continue de diminuer, montrant que le modèle améliore progressivement sa capacité de prédiction. La diminution lisse de la courbe suggère également que le processus d'entraînement est stable sans grandes fluctuations, ce qui signifie que le taux d'apprentissage pourrait être bien défini et que l'algorithme d'optimisation du modèle est capable de mettre à jour efficacement les poids.
+    </p>
+    <p>
+        Lorsque la courbe commence à s'aplatir, c'est-à-dire que les changements de perte deviennent minimes, cela signifie que le modèle pourrait se rapprocher de la limite de performance de ses données d'entraînement, ou ce que l'on appelle la convergence. À ce stade, continuer l'entraînement peut ne pas apporter d'amélioration significative de la performance et pourrait signifier que le modèle commence à surajuster.
+    </p>
+    <p>
+        D'après nos multiples expériences, dans le contexte de nos capacités de calcul limitées, le modèle a montré une performance relativement bonne avec les paramètres définis à learning_rate=0.005, batch_size=128, epochs=10, c'est pourquoi nous avons finalement choisi d'utiliser cet ensemble de paramètres.
+    </p>
+    <p>
+        L'image ci-dessous montre un extrait de paroles de chanson dans le style de Lana Del Rey que nous avons tenté de générer pendant le processus de formation. Nous pouvons voir que le texte généré présente certains problèmes, tels que des phrases maladroites et un manque de cohérence dans la grammaire et la structure des phrases. Cela pourrait être dû au fait que le modèle n'a pas bien appris les règles de la grammaire du langage naturel.
+    </p>
+    <p style="text-align: center;">
+    <img src="/images/lyric.jpg" alt="Courbe de perte du modèle" style="max-width: 80%; margin: 0 auto;">
+</p>
+
+    <p>
+        Les problèmes tels que la répétition des mots, où le vocabulaire est réutilisé dans le texte, peuvent survenir parce que le modèle entre dans une sorte d'état de "boucle" lors de la génération d'un mot; les problèmes de clarté sémantique, où les phrases générées par le modèle sont ambiguës ou incomplètes, peuvent être dus au fait que le modèle n'a pas capturé suffisamment de contexte pour générer des phrases significatives; et les problèmes de sélection de vocabulaire, où certains choix de mots peuvent ne pas correspondre au contexte ou être inappropriés.
+    </p>
+    <p>
+        Les causes de ces problèmes peuvent inclure un manque de données d'entraînement, des limites de capacité de calcul, chaque modèle de chanteur étant entraîné avec les données de 50 chansons, le modèle peut ne pas apprendre suffisamment de structure et de diversité linguistiques.
+    </p>
+    <p>
+        La complexité insuffisante du modèle : La complexité du modèle peut ne pas être suffisante pour saisir toutes les subtilités de la langue, et peut-être que l'essai d'une architecture Transformer pourrait améliorer les choses.
+    </p>
+  <p>
+Dans les travaux futurs, ce modèle pourrait être optimisé par les méthodes suivantes :
+</p>
+<ul>
+  <li>Enrichissement des données : Élargissement et diversification de l'ensemble des données d'entraînement. Cela pourrait être réalisé en introduisant plus de paroles ou en utilisant des techniques d'augmentation des données.</li>
+  <li>Prévention du surajustement :</li>
+  <ul>
+    <li>Utilisation de techniques de régularisation telles que le dropout.</li>
+    <li>Arrêt précoce de l'entraînement lorsque la perte de validation ne s'améliore plus.</li>
+  </ul>
+  <li>Ajustement de la structure du modèle : Augmentation de la capacité du modèle (réseaux plus profonds ou plus larges), ou utilisation de structures de modèle plus complexes, telles que les architectures Transformer ou GPT.</li>
+  <li>Fine-tuning à l'aide de modèles pré-entraînés pour cette tâche, car les modèles pré-entraînés possèdent déjà une connaissance linguistique approfondie, ce qui pourrait générer des textes de plus haute qualité.</li>
+</ul>
+    
+    
+    
+    
+    
+    
+    
     <p>Les améliorations envisagées pour rendre les paroles plus naturelles incluent :</p>
     <ul>
         <li>Notification des rimes : Intégration d'un système de notification des rimes pour améliorer la fluidité des paroles.</li>
