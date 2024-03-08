@@ -1,10 +1,12 @@
 # Generation_Lyrics-RNN
 
-M2 Nanterre Université 
+M2 Nanterre Université <br>
 
-GUI Kexin
-HUANG Yidi 
-dans le cadre de cours Réseaux de neurones et Interface Web
+
+HUANG Yidi<br>
+GUI Kexin<br>
+
+dans le cadre de cours <strong>Réseaux de Neurones </strong>et<strong> Interface Web</strong>
 
 Le projet vise à générer des paroles de chansons de manière automatique à l'aide du **RNN**.
 
