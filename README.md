@@ -4,7 +4,7 @@ M2 Nanterre Université
 
 GUI Kexin
 HUANG Yidi 
-dans le cadre de cours  Apprentissage Artificiel et Interface Web
+dans le cadre de cours Réseaux de neurones et Interface Web
 
 Le projet vise à générer des paroles de chansons de manière automatique à l'aide du **RNN**.
 
